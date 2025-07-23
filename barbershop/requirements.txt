@@ -1,0 +1,16 @@
+asgiref==3.8.1
+certifi==2025.7.14
+charset-normalizer==3.4.2
+Django==5.2.3
+docopt==0.6.2
+gunicorn==23.0.0
+httpserver==1.1.0
+idna==3.10
+packaging==25.0
+pyasynchat==1.0.4
+pyasyncore==1.0.4
+pyftpdlib==2.0.1
+requests==2.32.4
+sqlparse==0.5.3
+tzdata==2025.2
+urllib3==2.5.0

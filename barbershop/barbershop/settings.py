@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-f6tqy$(dr9w=96$ldrv38lxkce)tj)qc@y*44jjf0@===^&s7o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.onrender.com']
+
 
 
 # Application definition
@@ -123,3 +124,11 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL='core.User'
 LOGIN_REDIRECT_URL = '/home/'
+import os
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Render deploy detection
+if os.environ.get('RENDER'):
+    DEBUG = False
