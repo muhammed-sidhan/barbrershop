@@ -1,0 +1,666 @@
+:root {
+    --navy: #001f3f;
+    --light-navy: #003366;
+    --white: #ffffff;
+    --gray: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray);
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--navy);
+    padding: 1.5rem 0;
+    color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-left {
+    text-align: left;
+}
+
+.nav-right {
+    text-align: right;
+}
+
+.nav-link {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    background: transparent;
+    border: 2px solid white;
+    padding: 6px 14px;
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: var(--light-navy);
+}
+
+/* Logo */
+.logo img {
+    height: 45px;
+}
+
+/* Container & Messages */
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+ul.messages {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+
+
+
+
+
+/* Signup Form Container */
+.signup-form {
+    max-width: 450px; 
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+ 
+}
+
+/* Heading */
+.signup-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form Fields */
+.signup-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.signup-form input, 
+.signup-form select, 
+.signup-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+/* Hover Effect on Input */
+.signup-form input:hover,
+.signup-form select:hover,
+.signup-form textarea:hover {
+    border-color: #1f2a44; /* navy blue */
+}
+
+/* Button */
+.signup-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1f2a44;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+    background-color: #162036;
+}
+
+/* Footer / Login Link */
+.signup-form p {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.signup-form a {
+    color: #1f2a44;
+    text-decoration: none;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .signup-form {
+        margin: 20px;
+        padding: 20px 15px;
+    }
+
+    .signup-form h2 {
+        font-size: 20px;
+    }
+
+    .signup-form button {
+        font-size: 14px;
+    }
+}
+.show-password-label {
+  display: flex;
+  align-content: flex-start;
+  font-size: 14px;
+  margin: 8px 0 16px;
+  color: #333;
+}
+
+.show-password-label input[type="checkbox"] {
+  margin-right: 6px;
+display: inline;
+}
+.home-container {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Stack cards vertically on small screens */
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Specific background images for roles */
+.card-image.barber {
+  background-image: url("../images/barber.png");
+}
+
+.card-image.customer {
+  background-image: url("../images/customer.png");
+}
+
+/* Card wrapper styling */
+.role-card {
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.role-text {
+  background-color: #001f3f; /* navy blue */
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.dashboard-card {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #f4f9ff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dashboard-heading {
+  color: #0a2458;
+  margin-bottom: 15px;
+}
+
+.queue-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Base Button Style */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Specific Button Colors */
+.btn-green {
+    background-color: #28a745;
+}
+
+.btn-green:hover {
+    background-color: #218838;
+}
+
+.btn-red {
+    background-color: #dc3545;
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary,
+.btn-danger,
+.btn-secondary {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #1d4ed8;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+}
+.page-heading {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #0a2458;
+}
+
+.barber-grid {
+  display: grid;
+  gap: 20px;
+  padding: 0 20px;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 600px) {
+  .barber-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .barber-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.barber-card {
+  background-color: #f0f6ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.barber-card:hover {
+  transform: translateY(-5px);
+}
+
+.barber-card p {
+  margin: 10px 0;
+  color: #1f2937;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background-color: #1d4ed8;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+}
+/* Main wrapper for consistent spacing */
+.dashboard-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Barber Info Section */
+.barber-details {
+  background-color: #f4f9ff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-title {
+  font-size: 28px;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.role-info, .shop-info {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* Queue Section */
+.queue-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 22px;
+  color: #1f2937;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+
+.queue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.queue-card {
+  background-color: #eef2f7;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.queue-card:hover {
+  transform: translateY(-4px);
+}
+
+.queue-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.no-queue {
+  font-style: italic;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+/* View Full Queue Button */
+.view-full {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.view-button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.view-button:hover {
+  background-color: #1e40af;
+}
+
+/* Logout Button */
+.logout-form {
+  text-align: right;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #b91c1c;
+}
+/* Barber Queue Page - Scoped */
+.barber-queue-wrapper {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+.barber-queue-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #001f3f;
+    text-align: center;
+}
+
+.barber-queue-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.barber-queue-card {
+    background-color: white;
+    border-left: 5px solid #001f3f;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.barber-queue-info p {
+    margin: 0.3rem 0;
+}
+
+.barber-queue-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.barber-queue-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.barber-queue-empty {
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff3cd;
+    color: #856404;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.blocked-customers-section {
+    padding: 2rem;
+}
+
+.blocked-customers-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.blocked-customers-table th,
+.blocked-customers-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.blocked-customers-table th {
+    background-color: #001f3f; /* Navy blue */
+    color: white;
+    font-weight: bold;
+}
+
+.blocked-customers-table td {
+    background-color: #f9f9f9;
+}
+
+.blocked-customers-table tr:hover td {
+    background-color: #eef3ff;
+}
+
+.back-link {
+    margin-top: 2rem;
+    text-align: center;
+}

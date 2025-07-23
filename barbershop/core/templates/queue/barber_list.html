@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Barber List{% endblock %}
+
+{% block content %}
+  <h2 class="page-heading">Available Barbers</h2>
+
+  <div class="barber-grid">
+    {% for barber in barbers %}
+      <div class="barber-card">
+        <p><strong>Shop:</strong> {{ barber.shop_name }}</p>
+        <p><strong>Name:</strong> {{ barber.user.username }}</p>
+        <a href="{% url 'join_queue' barber.id %}" class="btn-primary">Join Queue</a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="back-link">
+    <a href="{% url 'customer_dashboard' %}" class="btn-secondary">← Back to Dashboard</a>
+  </div>
+{% endblock %}

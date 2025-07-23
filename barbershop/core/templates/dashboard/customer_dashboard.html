@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Customer Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-card">
+  <h2 class="dashboard-heading">Welcome, {{ request.user.username }} (Customer)</h2>
+  <p>This is your dashboard.</p>
+
+  {% if active_entry %}
+    <div class="queue-info">
+      <p>You are in queue at <strong>{{ active_entry.barber.shop_name }}</strong>.</p>
+      <p>Joined at: {{ active_entry.joined_at }}</p>
+      <a href="{% url 'leave_queue' active_entry.id %}" class="btn-danger">Leave Queue</a>
+    </div>
+  {% else %}
+    <p>You are not currently in any queue.</p>
+    <a href="{% url 'customer_barber_list' %}" class="btn-primary">Join a queue</a>
+  {% endif %}
+
+  <form method="post" action="{% url 'logout' %}" class="logout-form">
+    {% csrf_token %}
+    <button type="submit" class="logout-button">Logout</button>
+  </form>
+</div>
+{% endblock %}

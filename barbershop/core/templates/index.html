@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Barber Queue App{% endblock %}
+
+{% block content %}
+<div class="home-container">
+  <div class="card-grid">
+  <a href="{% url 'barber_register' %}" class="role-card-link">
+    <div class="role-card">
+      <div class="card-image barber"></div>
+      <div class="role-text">Barber</div>
+    </div>
+  </a>
+
+  <a href="{% url 'customer_register' %}" class="role-card-link">
+    <div class="role-card">
+      <div class="card-image customer"></div>
+      <div class="role-text">Customer</div>
+    </div>
+  </a>
+</div>
+
+</div>
+{% endblock %}

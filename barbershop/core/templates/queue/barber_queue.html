@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Barber Queue{% endblock %}
+
+{% block content %}
+<div class="barber-queue-wrapper">
+  <h2 class="barber-queue-title">Current Queue</h2>
+
+  {% if queue_entries %}
+    <div class="barber-queue-list">
+      {% for entry in queue_entries %}
+        <div class="barber-queue-card">
+          <div class="barber-queue-info">
+            <p><strong>Customer:</strong> {{ entry.customer.user.username }}</p>
+            <p><strong>Joined At:</strong> {{ entry.joined_at }}</p>
+          </div>
+          <div class="barber-queue-actions">
+            <a href="{% url 'mark_served' entry.id %}" class="btn btn-green">Mark Served</a>
+            <a href="{% url 'block_customer' entry.id %}" class="btn btn-red">Block Customer</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="barber-queue-empty">No customers in queue.</p>
+  {% endif %}
+
+  <div class="barber-queue-links">
+    <a href="{% url 'blocked_customers' %}" class="btn btn-secondary">View Blocked Customers</a>
+    <a href="{% url 'barber_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+  </div>
+</div>
+{% endblock %}

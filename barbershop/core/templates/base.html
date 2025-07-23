@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>{% block title %}Barber Queue App{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="page-wrapper">
+
+    <header class="main-header">
+        <nav class="nav-container">
+
+            <!-- Left: Logout -->
+            <div class="nav-left">
+              <!-- here nav left free add-->
+            </div>
+
+            <!-- Center: Dashboard -->
+            <div class="nav-center">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.role == 'barber' %}
+                        <a href="{% url 'barber_dashboard' %}" class="nav-link">Dashboard</a>
+                    {% else %}
+                        <a href="{% url 'customer_dashboard' %}" class="nav-link">Dashboard</a>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav-link">Login</a>
+                {% endif %}
+            </div>
+
+            <!-- Right: Logo -->
+            <div class="nav-right">
+                <a href="{% url 'index' %}" class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" height="45">
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="container">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="message {{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 <strong>Barber Queue App</strong></p>
+    </footer>
+
+</div>
+</body>
+</html>

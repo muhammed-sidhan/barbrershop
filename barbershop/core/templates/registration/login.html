@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="signup-form">
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <label for="id_username">Username:</label>
+    {{ form.username.errors }}
+    {{ form.username }}
+
+    <label for="id_password">Password:</label>
+    {{ form.password.errors }}
+    {{ form.password }}
+
+    <label class="show-password-label">
+      <input type="checkbox" id="show-password" onclick="togglePassword()"> Show Password
+    </label>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p>Don’t have an account?</p>
+  <ul>
+    <li><a href="{% url 'barber_register' %}">Sign up as Barber</a></li>
+    <li><a href="{% url 'customer_register' %}">Sign up as Customer</a></li>
+  </ul>
+</div>
+
+<script>
+  function togglePassword() {
+    const passwordInput = document.getElementById("id_password");
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+  }
+</script>
+{% endblock %}
