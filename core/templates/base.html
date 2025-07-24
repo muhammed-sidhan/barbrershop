@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     {% load static %}
     <title>{% block title %}Barber Queue App{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
 </head>
 <body>
 <div class="page-wrapper">
@@ -33,7 +33,7 @@
             <!-- Right: Logo -->
             <div class="nav-right">
                 <a href="{% url 'index' %}" class="logo">
-                    <img src="{% static 'images/logo.png' %}" alt="Logo" height="45">
+                    <img src="{% static 'core/images/logo.png' %}" alt="Logo" height="45">
                 </a>
             </div>
 
