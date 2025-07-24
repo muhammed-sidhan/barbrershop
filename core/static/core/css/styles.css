@@ -253,22 +253,20 @@ display: inline;
 
 .card-grid {
   display: flex;
-  justify-content: center;
+
   gap: 30px;
   flex-wrap: wrap;
 }
 
 /* Stack cards vertically on small screens */
 @media (max-width: 768px) {
-  .card-grid {
-    flex-direction: column;
-    align-items: center;
+  .role-card {
+    width: 90vw;
   }
 }
-
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 180px; /* you can increase if needed */
   background-size: cover;
   background-position: center;
   border-top-left-radius: 12px;
@@ -287,6 +285,7 @@ display: inline;
 /* Card wrapper styling */
 .role-card {
   width: 220px;
+  max-width: 90vw; /* allow responsiveness on mobile */
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
@@ -303,9 +302,9 @@ display: inline;
 .role-text {
   background-color: #001f3f; /* navy blue */
   color: white;
-  padding: 12px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
+  padding: 16px;
 }
 .dashboard-card {
   max-width: 500px;
@@ -316,7 +315,7 @@ display: inline;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
+/* Dashboard Styles */
 .dashboard-heading {
   color: #0a2458;
   margin-bottom: 15px;
