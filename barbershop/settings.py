@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-f6tqy$(dr9w=96$ldrv38lxkce)tj)qc@y*44jjf0@===^&s7o
 
 DEBUG = True  # This will be overridden below on Render
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['.onrender.com',"*"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -89,7 +89,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ✅ Override DEBUG in production (Render sets this env var automatically)
 if os.environ.get('RENDER'):
     DEBUG = False
-    
 
 # User model and login redirect
 AUTH_USER_MODEL = 'core.User'
