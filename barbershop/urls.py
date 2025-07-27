@@ -10,7 +10,6 @@ class StaticSitemap(Sitemap):
         return [
             
             'index',
-            'role_based_home',
             'barber_register',
             'customer_register',
             'login',

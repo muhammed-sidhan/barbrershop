@@ -63,8 +63,10 @@ def customer_dashboard (request):
     return render (request,'dashboard/customer_dashboard.html',{'active_entry':active_entry})
 
 #views to list barber
-@login_required
+
 def customer_barber_list(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     if request.user.role != 'customer':
         return redirect ('barber_dashboard')
     barbers=BarberProfile.objects.filter(is_open=True)
