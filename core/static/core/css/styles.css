@@ -44,9 +44,24 @@ html, body {
 .nav-left,
 .nav-center,
 .nav-right {
-    flex: 1;
+    
     text-align: center;
+    display: flex;  
+    align-items: center;
+    
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;    
+    font-size: x-large;
+
+
 }
+nav-text {
+   font-family: 'Arial Narrow';
+}
+
+
 
 .nav-left {
     text-align: left;
@@ -234,16 +249,15 @@ main {
     }
 }
 .show-password-label {
-  display: flex;
-  align-content: flex-start;
   font-size: 14px;
   margin: 8px 0 16px;
   color: #333;
+  
 }
 
 .show-password-label input[type="checkbox"] {
   margin-right: 6px;
-display: inline;
+justify-items: end;
 }
 .home-container {
   max-width: 900px;
@@ -703,6 +717,11 @@ display: inline;
   align-items: center;
   justify-content: center;
   padding: 30px;
+  background-image: url("../images/signup_illustration.png"); 
+  background-size: cover;
+  background-position: center;  
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;  
 }
 
 .signup-image-section img {
@@ -730,6 +749,15 @@ display: inline;
 
   .signup-image-section {
     padding: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; 
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    background-image: none; /* Remove image on small screens */
+    background-color: #1f2a44; /* Keep the background color */  
+
+
   }
 
   .signup-form-section {
@@ -740,4 +768,29 @@ display: inline;
 
 
  list-style-type: none;
+}
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: inherit;
+}
+
+.custom-q {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-image: url('{% static "core/images/logo.png" %}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 2px;
+}
+
+.brand-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 45px;
 }

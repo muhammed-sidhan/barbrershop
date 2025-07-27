@@ -3,8 +3,17 @@
 {% block title %}Barber Registeration{% endblock %}
 
 {% block content %}
-<body>
-  <div class="signup-form">
+
+
+  <div class="signup-container">
+  <div class="signup-card">
+ <!-- Left Side Image -->
+    <div class="signup-image-section">
+     
+    </div>
+  <!-- Right Side Form -->
+
+  <div class="signup-form-section">
 <h2>Sign up as a Barber</h2>
 
 <form method="post" class="signup-form">
@@ -25,6 +34,8 @@
 
 
 <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+</div>
 </div>
 
 {% endblock %}
