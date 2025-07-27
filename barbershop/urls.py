@@ -27,6 +27,9 @@ urlpatterns = [
     path('',include('core.urls')),
      # robots.txt served from template
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    path('google1234567890abcdef.html',
+         TemplateView.as_view(template_name='google1234567890abcdef.html',
+                              content_type='text/html')),
 ]
 
 class StaticSitemap(Sitemap):
@@ -43,7 +46,7 @@ class StaticSitemap(Sitemap):
         return reverse(item)
 
 sitemaps = {
-    'static': StaticSitemap,
+    'static': StaticSitemap(),
 }
 
 urlpatterns += [
