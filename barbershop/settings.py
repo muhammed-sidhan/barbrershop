@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'whitenoise',  # ✅ Required for serving static files in production
     'django.contrib.sites',  # ✅ Required for Django sites framework
 ]
+site_id = 1  # ✅ Required for Django sites framework
+SITE_ID=1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
