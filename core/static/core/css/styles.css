@@ -736,3 +736,8 @@ display: inline;
     padding: 30px 20px;
   }
 }
+.signup-options {
+
+
+ list-style-type: none;
+}
