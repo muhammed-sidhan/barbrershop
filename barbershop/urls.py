@@ -4,7 +4,12 @@ from django.views.generic import TemplateView
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
+from django.contrib.sites.models import Site
 
+site, created = Site.objects.get_or_create(pk=1)
+site.domain = "qforbarber.onrender.com"
+site.name = "QForBarber"
+site.save()
 class StaticSitemap(Sitemap):
     def items(self):
         return [
