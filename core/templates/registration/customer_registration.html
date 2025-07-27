@@ -1,25 +1,40 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+
 
 {% block title %}Customer Registeration{% endblock %}
 
 {% block content %}
-<div class="signup-form">
-  <h2>Sign up as a Customer</h2>
-  <form method="post" class="signup-form">
-  {% csrf_token %}
-  
-  {% for field in form %}
-    <div class="form-group">
-      {{ field.label_tag }}
-      {{ field }}
-      {% if field.errors %}
-        <div class="errorlist">{{ field.errors|join:", " }}</div>
-      {% endif %}
-    </div>
-  {% endfor %}
+<div class="signup-container">
+  <div class="signup-card">
 
-  <button type="submit">Register</button>
-</form>
-  <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    <!-- Left Side Image -->
+    <div class="signup-image-section">
+      <img src="{% static 'core/images/signup_illustration.jpg' %}" alt="Signup Illustration" />
+    </div>
+
+    <!-- Right Side Form -->
+    <div class="signup-form-section">
+      <h2>Sign up as a Customer</h2>
+      <form method="post" class="signup-form">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.errors %}
+              <div class="errorlist">{{ field.errors|join:", " }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+
+  </div>
 </div>
+
 {% endblock %}
