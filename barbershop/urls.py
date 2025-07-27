@@ -8,7 +8,7 @@ from django.urls import reverse
 class StaticSitemap(Sitemap):
     def items(self):
         return [
-            'home',
+            
             'index',
             'role_based_home',
             'barber_register',
