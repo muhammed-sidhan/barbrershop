@@ -19,12 +19,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'django.contrib.sitemaps',  # ✅ Required for sitemap functionality
+    'core',  
+    'django.contrib.sitemaps',# ✅ Required for sitemap functionality
     'whitenoise.runserver_nostatic',  # ✅ Required for serving static files in development
     'whitenoise',  # ✅ Required for serving static files in production
     'django.contrib.sites',  # ✅ Required for Django sites framework
-    
 ]
 
 MIDDLEWARE = [
