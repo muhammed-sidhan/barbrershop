@@ -92,7 +92,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ✅ Override DEBUG in production (Render sets this env var automatically)
 if os.environ.get('RENDER'):
-    DEBUG = False
+    DEBUG = True  # Set to False in production
 
 # User model and login redirect
 AUTH_USER_MODEL = 'core.User'
